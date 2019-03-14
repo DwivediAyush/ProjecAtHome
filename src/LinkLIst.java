@@ -24,6 +24,50 @@ public class LinkLIst
         }
 
     }
+    //DELETE ODD node
+    /*PUBLIC VOID DELETEODDNODE()
+{
+    NODE N=HEAD;
+    NODE PRE;
+    IF(N.DATA%2!=0)
+    HEAD=HEAD.NEXT;
+    PRE=N;
+    N=N.NEXT;
+    ELSE
+    {
+        WHILE(N!=NULL)
+        {
+            IF(N.DATA%2!=0)
+            {
+                PRE.NEXT=N.NEXT.NEXT;
+                N=N.NEXT;
+            }
+            PRE=N;
+            N=N.NEXT;
+        }
+    }*/
+    public void deleteoddnode()
+    {
+        Node n=head;
+        Node pre;
+        pre=n;
+        if(n.data%2!=0) {
+            head = head.next;
+       n=n.next;
+        }
+
+
+            while(n!=null) {
+                if (n.data % 2 != 0) {
+                    pre.next = n.next;
+                    n = n.next;
+                } else {
+                    pre = n;
+                    n = n.next;
+                }
+            }
+        }
+
 //insertAtanyposition
     void InsertAtPosition(int position, int data) {
         Node node = new Node();
@@ -174,12 +218,13 @@ void show()
 }
     public static void main(String[] args) {
         LinkLIst obj=new LinkLIst();
+        obj.insert(11);
         obj.insert(12);
         obj.insert(24);
         obj.insert(34);
         obj.insert(55);
         obj.show();
-        obj.InsertAtPosition(3,44);
+        /*obj.InsertAtPosition(3,44);
         obj.show();
         obj.InsertAtPosition(1,11);
         obj.show();
@@ -194,7 +239,15 @@ void show()
         obj.replace(44,55);
         obj.show();
 */
-      obj.bsort();
+          obj.insert(77);
+        obj.insert(77);
+        obj.insert(88);
+        obj.insert(99);
+        obj.show();
+
+     /* obj.bsort();
       obj.show();
+     */obj.deleteoddnode();
+     obj.show();
     }
 }
