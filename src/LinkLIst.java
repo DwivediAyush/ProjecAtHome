@@ -49,16 +49,18 @@ public class LinkLIst
     public void deleteoddnode()
     {
         Node n=head;
-        Node pre;
-        pre=n;
-        if(n.data%2!=0) {
-            head = head.next;
-       n=n.next;
-        }
+        Node pre=null;
+        pre=head;
 
 
             while(n!=null) {
-                if (n.data % 2 != 0) {
+                if(n.data%2!=0&&n==head) {
+                    head= head.next;
+
+                    n=n.next;
+
+                }
+               else if (n.data % 2 != 0) {
                     pre.next = n.next;
                     n = n.next;
                 } else {
@@ -219,10 +221,13 @@ void show()
     public static void main(String[] args) {
         LinkLIst obj=new LinkLIst();
         obj.insert(11);
+        obj.insert(11);
+
         obj.insert(12);
         obj.insert(24);
         obj.insert(34);
         obj.insert(55);
+
         obj.show();
         /*obj.InsertAtPosition(3,44);
         obj.show();
