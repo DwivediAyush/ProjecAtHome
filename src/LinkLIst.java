@@ -49,10 +49,10 @@ public class LinkLIst
     public void deleteoddnode()
     {
         Node n=head;
-        Node pre=null;
+        Node pre;
         pre=head;
 
-
+//traverser
             while(n!=null) {
                 if(n.data%2!=0&&n==head) {
                     head= head.next;

@@ -1,3 +1,5 @@
+import javax.lang.model.util.ElementScanner6;
+import java.util.*;
 public class Queue {
     Node head;
     Node tail;
@@ -29,18 +31,13 @@ public class Queue {
     }
 
 
-    void display()
-    {
-        Node temp=head;
-        if(isEmpty())
-            System.out.println("queue is empty");
-        else {
-            while (temp != null) {
-                System.out.print(temp.data+" ");
-                temp = temp.next;
-            }
-        }
-        System.out.println();
+    void display(Node n)
+    {  if(n.next==null) {
+        System.out.print(n.data);
+        return;
+    }
+    display(n.next);
+        System.out.print("==>"+n.data);
             }
 
     private boolean isEmpty() {
@@ -52,7 +49,7 @@ public class Queue {
 
     public static void main(String[] args) {
         Queue obj=new Queue();
-        obj.enqueue(11);
+       /* obj.enqueue(11);
         obj.enqueue(22);
         obj.enqueue(33);
         obj.enqueue(44);
@@ -60,5 +57,17 @@ public class Queue {
         obj.dequeue();
         obj.dequeue();
         obj.display();
+
+    */
+        Scanner s;
+        s = new Scanner(System.in);
+        int n=s.nextInt();
+        while(n!=0)
+        {
+            int r=n%10;
+            obj.enqueue(r);
+            n=n/10;
+        }
+        obj.display(obj.head);
     }
 }
