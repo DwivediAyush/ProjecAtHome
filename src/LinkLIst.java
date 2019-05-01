@@ -186,7 +186,7 @@ public class LinkLIst
         return head == null;
     }
 
-    //bouble sort
+    //bubble sort
     void bsort()
     {
         Node i=head,j;

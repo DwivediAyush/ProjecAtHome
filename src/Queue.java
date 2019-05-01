@@ -30,7 +30,7 @@ public class Queue {
              }
     }
 
-
+//display using recursion
     void display(Node n)
     {  if(n.next==null) {
         System.out.print(n.data);
